@@ -11,3 +11,21 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.card {
+    background: darkslateblue;
+    text-align: center;
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
+}
+
+.links a {
+    display: block;
+    background: dimgray;
+    color: white;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+}
