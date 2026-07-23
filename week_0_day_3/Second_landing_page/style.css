@@ -51,3 +51,9 @@ ul li {
     margin-top: 27px;
     font-size: 14px;
 }
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: arial;
+}
