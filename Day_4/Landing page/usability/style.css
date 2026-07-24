@@ -1,0 +1,43 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: arial, sans-serif;
+    background: whitesmoke;
+    color: darkslategrey;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: white;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkslategray;
+}
+
+nav a {
+    text-decoration: : none;
+    color: dimgray;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a::hover {
+    color: dodgerblue;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+    max-width: 800px;
+    margin: 0px;
+}
