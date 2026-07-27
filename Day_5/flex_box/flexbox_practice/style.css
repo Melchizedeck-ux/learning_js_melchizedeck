@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: darkslategray;
+    color: white;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 50px;
+}
+
+.feature {
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.feature {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 50px;
+    width: 200px;
+}
