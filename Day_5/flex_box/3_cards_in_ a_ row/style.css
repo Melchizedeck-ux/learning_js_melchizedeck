@@ -1,0 +1,14 @@
+.features {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 50px;
+}
+
+.feature {
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+}
