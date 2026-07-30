@@ -16,6 +16,15 @@
         </div>
         <div class="note"> Used when you know how many time you want to repeat</div>
     </div>
+    <script>
+        function runloop() {
+            let result = "";
+            for (let i = 1; i <= 5; i++) {
+                result += `<span>${i}</span>`;
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
 </body>
 
 </html>
