@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange: hsl(26, 100%, 55%);
+            --pale-orange: hsl(25, 100%, 94%);
+            --very-dark-blue: hsl(220, 13%, 13%);
+            --dark-grayish-blue: hsl(219, 9%, 45%);
+            --grayish-blue: hsl(220, 14%, 75%);
+            --light-grayish-blue: hsl(223, 64%, 98%);
+            --white: hsl(0, 0%, 100%);
+            --black: hsl(0, 0%, 0%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kumbh Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 10%;
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--light-grayish-blue);
+            margin-bottom: 5rem;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 3.5rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-grayish-blue);
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--very-dark-blue);
+            padding-bottom: 3rem;
+            border-bottom: 4px solid var(--orange);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .cart-icon {
+            cursor: pointer;
+            width: 22px;
+        }
+
+        .avatar {
+            width: 50px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 50%;
+        }
+
+        .avatar:hover {
+            border: 2px solid var(--orange);
+        }
+
+        /* --- Main Content --- */
+        main {
+            display: flex;
+            align-items: center;
+            gap: 8rem;
+            padding-bottom: 5rem;
+        }
+
+        /* Gallery */
+        .gallery {
+            flex: 1;
+        }
+
+        .main-img {
+            width: 100%;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .thumbnails img {
+            width: 20%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .thumbnails img:hover {
+            opacity: 0.6;
+        }
+
+        .thumbnails img.active {
+            border: 3px solid var(--orange);
+            opacity: 0.4;
+        }
+
+        /* Product Info */
+        .product-info {
+            flex: 1;
+        }
+
+        .brand {
+            color: var(--orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--very-dark-blue);
+            line-height: 1.1;
+            margin-bottom: 2.5rem;
+        }
+
+        .description {
+            color: var(--dark-grayish-blue);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* Pricing */
+        .pricing {
+            margin-bottom: 2rem;
+        }
+
+        .current-price {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--very-dark-blue);
+        }
+
+        .discount {
+            background-color: var(--very-dark-blue);
+            color: var(--white);
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .original-price {
+            color: var(--grayish-blue);
+            text-decoration: line-through;
+            font-weight: 700;
+        }
+
+        /* Buttons Section */
+        .actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .qty-selector {
+            background-color: var(--light-grayish-blue);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            width: 150px;
+            border-radius: 10px;
+        }
+
+        .qty-selector button {
+            background: none;
+            border: none;
+            color: var(--orange);
+            font-size: 1.5rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .qty-selector span {
+            font-weight: 700;
+            color: var(--very-dark-blue);
+        }
+
+        .add-btn {
+            background-color: var(--orange);
+            color: var(--white);
+            border: none;
+            flex: 1;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            cursor: pointer;
+            box-shadow: 0 20px 50px var(--pale-orange);
+            transition: 0.3s;
+        }
+
+        .add-btn:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 900px) {
+            body { padding: 0 5%; }
+            main { flex-direction: column; gap: 2rem; }
+            header { margin-bottom: 2rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-left">
+            <div class="logo">sneakers</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="nav-right">
+            <img src="https://raw.githubusercontent.com/Arun602/ecommerce-product-page-main/main/images/icon-cart.svg" alt="cart" class="cart-icon">
+            <img src="https://raw.githubusercontent.com/Arun602/ecommerce-product-page-main/main/images/image-avatar.png" alt="avatar" class="avatar">
+        </div>
+    </header>
+
+    <main>
+        <section class="gallery">
+            <img src="https://raw.githubusercontent.com/Arun602/ecommerce-product-page-main/main/images/image-product-1.jpg" alt="Sneaker" class="main-img">
+            <div class="thumbnails">
+                <img src="https://raw.githubusercontent.com/Arun602/ecommerce-product-page-main/main/images/image-product-1-thumbnail.jpg" class="active" alt="thumb">
+                <img src="https://raw.githubusercontent.com/Arun602/ecommerce-product-page-main/main/images/image-product-2-thumbnail.jpg" alt="thumb">
+                <img src="https://raw.githubusercontent.com/Arun602/ecommerce-product-page-main/main/images/image-product-3-thumbnail.jpg" alt="thumb">
+                <img src="https://raw.githubusercontent.com/Arun602/ecommerce-product-page-main/main/images/image-product-4-thumbnail.jpg" alt="thumb">
+            </div>
+        </section>
+
+        <section class="product-info">
+            <p class="brand">Sneaker Company</p>
+            <h1>Fall Limited Edition Sneakers</h1>
+            <p class="description">
+                These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+
+            <div class="pricing">
+                <div class="current-price">
+                    <span class="price">$125.00</span>
+                    <span class="discount">50%</span>
+                </div>
+                <span class="original-price">$250.00</span>
+            </div>
+
+            <div class="actions">
+                <div class="qty-selector">
+                    <button>-</button>
+                    <span>0</span>
+                    <button>+</button>
+                </div>
+                <button class="add-btn">
+                    <img src="https://raw.githubusercontent.com/Arun602/ecommerce-product-page-main/main/images/icon-cart-white.svg" width="18px" alt="cart">
+                    Add to cart
+                </button>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

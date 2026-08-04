@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Guess the Number</h1>
+    <p>I'm thinking of a number between 1 and 10.</p>
+    <input type="number" id="guessInput" placeholder="Enter your guess">
+    <button id="guessBtn">Guess</button>
+    <p id="message"></p>
+    <button id="resetBtn">Play Again</button>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 10) + 1;
+        console.log("Secret number:", randomNumber);
+
+        const guessInput = document.getElementById("guessInput");
+        const guessBtn = document.getElementById("guessBtn");
+        const message = document.getElementById("message");
+        const resetBtn = document.getElementById("resetBtn");
+
+
+        function checkGuess() {
+            const userGuess = Number(guessInput.value);
+
+
+            if (userGuess === "" || isNaN(userGuess)) {
+                message.textContent = "Please enter a valid number!";
+                message.style.color = "red";
+                return;
+            }
+
+
+            if (userGuess === randomNumber) {
+                message.textContent = "🎉 Correct! You guessed it!";
+                message.style.color = "green";
+                guessBtn.disabled = true;
+                guessInput.disabled = true;
+            } else if (userGuess > randomNumber) {
+                message.textContent = " Too high! Try again.";
+                message.style.color = "orange";
+            } else if (userGuess < randomNumber) {
+                message.textContent = " Too low! Try again.";
+                message.style.color = "orange";
+            } else {
+                message.textContent = "❌ Invalid input!";
+                message.style.color = "red";
+            }
+
+
+            guessInput.value = "";
+        }
+
+
+        function resetGame() {
+            randomNumber = Math.floor(Math.random() * 10) + 1;
+            console.log("New secret number:", randomNumber);
+            message.textContent = "New game started! Guess a number.";
+            message.style.color = "black";
+            guessInput.disabled = false;
+            guessBtn.disabled = false;
+            guessInput.value = "";
+        }
+
+
+
+
+        guessBtn.addEventListener("click", checkGuess);
+
+        guessInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                checkGuess();
+            }
+        });
+
+
+        resetBtn.addEventListener("click", resetGame);
+    </script>
+</body>
+
+</html>
