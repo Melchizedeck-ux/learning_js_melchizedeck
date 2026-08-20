@@ -2,22 +2,37 @@
 <html>
 
 <head>
-    <style>
-
-    </style>
-    <script>
-    </script>
+    <title>Shape Area Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Welcome to Area calculator</h1>
-    <p>This page calculate the area of different shapes</p>
-    <h3>Select a shape</h3>
-    <div>calculator Codes
+
+    <div class="calculator">
+
+        <h1>Area Calculator</h1>
+
+        <label>Select a shape:</label>
+
+        <select id="shape" onchange="showInputs()">
+            <option value=""> Choose Shape </option>
+            <option value="triangle">Triangle</option>
+            <option value="circle">Circle</option>
+            <option value="square">Square</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="ellipse">Ellipse</option>
+        </select>
+
+        <div id="inputs"></div>
+
+        <button onclick="calculateArea()">Calculate Area</button>
+
+        <h2 id="result"></h2>
+
     </div>
-    <div>
-        for answer
-    </div>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
