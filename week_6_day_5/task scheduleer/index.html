@@ -4,27 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Task Scheduler</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <div class="container">
+
         <h1>Task Scheduler</h1>
 
-        <p>
-            Open the browser console to see the scheduled tasks.
-        </p>
+        <div class="form">
 
-        <button onclick="startScheduler()">
-            Start Scheduler
-        </button>
+            <label>Task</label>
 
-        <div id="message"></div>
+            <input type="text" id="taskInput" placeholder="Enter your task">
+
+            <label>Delay (seconds)</label>
+
+            <input type="number" id="timeInput" placeholder="Enter seconds" min="1">
+
+            <button onclick="scheduleTask()">
+                Schedule Task
+            </button>
+
+        </div>
+
+        <h2>Scheduled Tasks</h2>
+
+        <div id="taskList"></div>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
 
 </html>
