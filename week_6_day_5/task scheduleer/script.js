@@ -1,17 +1,41 @@
-function startScheduler() {
+function scheduleTask() {
 
-    console.log("Scheduler started");
+    const taskInput = document.getElementById("taskInput");
+    const timeInput = document.getElementById("timeInput");
+    const taskList = document.getElementById("taskList");
 
-    console.log("Task 1: Start immediately");
+    const taskName = taskInput.value.trim();
+    const seconds = Number(timeInput.value);
+
+    if (taskName === "" || seconds <= 0) {
+        alert("Please enter a task and a valid time.");
+        return;
+    }
+
+    const task = document.createElement("div");
+
+    task.className = "task";
+
+    task.innerHTML = `
+        <strong>${taskName}</strong>
+        <p>Waiting... ${seconds} seconds</p>
+    `;
+
+    taskList.appendChild(task);
+
+    taskInput.value = "";
+    timeInput.value = "";
 
     setTimeout(function() {
-        console.log("Task 2: Completed after 2 seconds");
-    }, 2000);
 
-    setTimeout(function() {
-        console.log("Task 3: Completed after 4 seconds");
-    }, 4000);
+        task.className = "task completed";
 
-    document.getElementById("message").textContent =
-        "Tasks have been scheduled!";
+        task.innerHTML = `
+            <strong>✓ ${taskName}</strong>
+            <p>Task completed!</p>
+        `;
+
+        console.log(`Task completed: ${taskName}`);
+
+    }, seconds * 1000);
 }
