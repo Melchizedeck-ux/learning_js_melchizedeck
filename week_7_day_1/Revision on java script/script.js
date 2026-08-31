@@ -9,5 +9,7 @@ console.log(language);
 
 let name = "Melchizedeck";
 console.log(name);
-let name = "Tayen"
+name = "Tayen"
 console.log(name);
+const passportNumber = 398585;
+console.log(passportNumber);
