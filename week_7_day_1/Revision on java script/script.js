@@ -11,5 +11,13 @@ let name = "Melchizedeck";
 console.log(name);
 name = "Tayen"
 console.log(name);
+
+
 const passportNumber = 398585;
 console.log(passportNumber);
+passportNumber = 44353;
+console.log(passportNumber);
+
+
+let school;
+console.log(school);
