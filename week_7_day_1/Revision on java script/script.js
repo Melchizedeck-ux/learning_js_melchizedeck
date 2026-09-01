@@ -15,7 +15,7 @@ console.log(name);
 
 const passportNumber = 398585;
 console.log(passportNumber);
-passportNumber = 44353;
+
 console.log(passportNumber);
 
 
